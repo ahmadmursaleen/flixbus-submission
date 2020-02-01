@@ -43,7 +43,7 @@ import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { TabsModule } from "ngx-bootstrap/tabs";
 import { ChartsModule } from "ng2-charts";
 import { LoginComponent } from "./views/login/login.component";
-import { BusTypePipe } from "./bus-type.pipe";
+import { StationsListComponent } from './views/stations-list/stations-list.component';
 
 // Firebase configuration object
 const firebaseConfig = {
@@ -76,7 +76,7 @@ const firebaseConfig = {
     CommonModule,
     NgxPaginationModule
   ],
-  declarations: [AppComponent, ...APP_CONTAINERS, LoginComponent],
+  declarations: [AppComponent, ...APP_CONTAINERS, LoginComponent, StationsListComponent],
   providers: [
     {
       provide: LocationStrategy,

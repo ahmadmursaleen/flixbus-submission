@@ -5,6 +5,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { DefaultLayoutComponent } from "./containers";
 import { LoginComponent } from "./views/login/login.component";
 import { AdminGuard } from "./admin.guard";
+import { StationsListComponent } from "./views/stations-list/stations-list.component";
 
 export const routes: Routes = [
   {
@@ -33,6 +34,14 @@ export const routes: Routes = [
           import("./views/dashboard/dashboard.module").then(
             m => m.DashboardModule
           )
+      },
+      {
+        path: "stations",
+        canActivate: [AdminGuard],
+        component: StationsListComponent,
+        data: {
+          title: "FlixBus Charter"
+        }
       }
     ]
   }

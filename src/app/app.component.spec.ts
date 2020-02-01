@@ -47,11 +47,24 @@ describe("AppComponent", () => {
     const dashboardComponent = fixture.debugElement.componentInstance;
     expect(dashboardComponent.selectedBusTypes.length).toBe(0);
   }));
+  it("should have no station selected on page load", async(() => {
+    const fixture = TestBed.createComponent(DashboardComponent);
+    const dashboardComponent = fixture.debugElement.componentInstance;
+    expect(dashboardComponent.selectedStations.length).toBe(0);
+  }));
 
   // Test Cases wrtitten to test the asynchronous communication with the flixbus-charter service
   it("should return a list of buses", async(
     inject([FlixbusCharterService], (service: FlixbusCharterService) => {
       service.busListSearch().subscribe(response => {
+        expect(response).toBeTruthy();
+      });
+    })
+  ));
+
+  it("should return a list of stations", async(
+    inject([FlixbusCharterService], (service: FlixbusCharterService) => {
+      service.stationListSearch().subscribe(response => {
         expect(response).toBeTruthy();
       });
     })

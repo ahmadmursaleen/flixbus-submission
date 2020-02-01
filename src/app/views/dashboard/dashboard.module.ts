@@ -10,6 +10,7 @@ import { CommonModule } from "@angular/common";
 import { BusNumberPipe } from "../../bus-number.pipe";
 import { NgMultiSelectDropDownModule } from "ng-multiselect-dropdown";
 import { BusTypePipe } from "../../bus-type.pipe";
+import { StationPipe } from "../../station.pipe";
 
 @NgModule({
   imports: [
@@ -22,6 +23,6 @@ import { BusTypePipe } from "../../bus-type.pipe";
     NgxPaginationModule,
     NgMultiSelectDropDownModule
   ],
-  declarations: [DashboardComponent, BusNumberPipe, BusTypePipe]
+  declarations: [DashboardComponent, BusNumberPipe, BusTypePipe, StationPipe]
 })
 export class DashboardModule {}

@@ -22,6 +22,15 @@
             >
             </ng-multiselect-dropdown>
           </h6>
+          <h6 style="display: inline; float: right;">
+            <ng-multiselect-dropdown
+              [placeholder]="'Select Station Name'"
+              [data]="stationSelectData"
+              [(ngModel)]="selectedStations"
+              [settings]="stationSelectorSettings"
+            >
+            </ng-multiselect-dropdown>
+          </h6>
         </div>
       </div>
     </div>
@@ -32,6 +41,7 @@
         let bus of busListFrontend
           | busNumber: searchPlateNumber
           | busType: selectedBusTypes
+          | station: selectedStations
           | paginate: { itemsPerPage: perPageItems, currentPage: p }
       "
     >

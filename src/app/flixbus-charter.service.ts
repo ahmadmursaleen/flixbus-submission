@@ -27,4 +27,13 @@ export class FlixbusCharterService {
     this.bus = this.http.get<Bus>("http://localhost:3000/buses", httpOptions);
     return this.bus;
   };
+
+  // Fucntionality to access the station lists
+  stationListSearch: Function = (): Observable<Station> => {
+    this.station = this.http.get<Station>(
+      "http://localhost:3000/stations",
+      httpOptions
+    );
+    return this.station;
+  };
 }

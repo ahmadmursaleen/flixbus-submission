@@ -39,6 +39,17 @@ export class DashboardComponent implements OnInit {
   };
 
   //variables for multiple selection dropdowns - STATION
+  stationSelectData = [];
+  selectedStations = [];
+  stationSelectorSettings = {
+    singleSelection: false,
+    idField: "id",
+    textField: "item_text",
+    selectAllText: "Select All",
+    unSelectAllText: "UnSelect All",
+    itemsShowLimit: 3,
+    allowSearchFilter: true
+  };
 
   constructor(private flixbusCharter: FlixbusCharterService) {}
   ngOnInit(): void {
@@ -48,12 +59,11 @@ export class DashboardComponent implements OnInit {
         this.busListBackend = response;
         this.busListFrontend = response;
       });
-    this.busTypeSelectData = [
-      { item_id: 1, item_text: "Regular" },
-      { item_id: 2, item_text: "MiniBus" },
-      { item_id: 3, item_text: "Hybrid" },
-      { item_id: 4, item_text: "DoubleDecker" }
-    ];
+    this._subscription = this.flixbusCharter
+      .stationListSearch()
+      .subscribe(response => {
+        this.stationSelectData = response;
+      });
   }
 
   //Event Handlers for multiple selection dropdowns - BUS TYPE
