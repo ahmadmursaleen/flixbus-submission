@@ -43,7 +43,10 @@ import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { TabsModule } from "ngx-bootstrap/tabs";
 import { ChartsModule } from "ng2-charts";
 import { LoginComponent } from "./views/login/login.component";
-import { StationsListComponent } from './views/stations-list/stations-list.component';
+import { StationsListComponent } from "./views/stations-list/stations-list.component";
+import { AddBusComponent } from "./views/add-bus/add-bus.component";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { MatDialogModule } from "@angular/material/dialog";
 
 // Firebase configuration object
 const firebaseConfig = {
@@ -74,15 +77,24 @@ const firebaseConfig = {
     AngularFireAuthModule,
     HttpClientModule,
     CommonModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  declarations: [AppComponent, ...APP_CONTAINERS, LoginComponent, StationsListComponent],
+  declarations: [
+    AppComponent,
+    ...APP_CONTAINERS,
+    LoginComponent,
+    StationsListComponent,
+    AddBusComponent
+  ],
   providers: [
     {
       provide: LocationStrategy,
       useClass: HashLocationStrategy
     }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [AddBusComponent]
 })
 export class AppModule {}

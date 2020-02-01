@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { Subscription } from "rxjs";
 import { Bus } from "../../bus";
 import { FlixbusCharterService } from "../../flixbus-charter.service";
+import { AddBusComponent } from "../add-bus/add-bus.component";
+import { MatDialog } from "@angular/material/dialog";
 
 @Component({
   templateUrl: "dashboard.component.html"
@@ -51,7 +53,10 @@ export class DashboardComponent implements OnInit {
     allowSearchFilter: true
   };
 
-  constructor(private flixbusCharter: FlixbusCharterService) {}
+  constructor(
+    private flixbusCharter: FlixbusCharterService,
+    public dialog: MatDialog
+  ) {}
   ngOnInit(): void {
     this._subscription = this.flixbusCharter
       .busListSearch()
@@ -69,6 +74,18 @@ export class DashboardComponent implements OnInit {
   //Event Handlers for multiple selection dropdowns - BUS TYPE
   onSelectAll(items: any) {
     this.busListFrontend = this.busListBackend;
+  }
+
+  // Dialog box for adding a new bus
+  openDialog() {
+    const dialogRef = this.dialog.open(AddBusComponent, {
+      width: "450px"
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      //console.log("The dialog was closed");
+      this.ngOnInit();
+    });
   }
 
   ngOnDestroy(): void {

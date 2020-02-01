@@ -13,6 +13,16 @@
             />
           </h4>
           <h6 style="display: inline; float: right;">
+            <button
+              type="button"
+              class="btn btn-brand btn-css3"
+              style="float: right;"
+              (click)="openDialog()"
+            >
+              <span>Add new bus</span>
+            </button>
+          </h6>
+          <h6 style="display: inline; float: right;">
             <ng-multiselect-dropdown
               [placeholder]="'Select Bus Type'"
               [data]="busTypeSelectData"

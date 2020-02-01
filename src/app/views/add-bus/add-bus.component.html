@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>Add New Bus</h1>
+<form [formGroup]="addBusForm" (ngSubmit)="onSubmit()">
+  <label>
+    Plate
+    <input type="text" placeholder="BUS-XXX-XXX" formControlName="plateNumber"
+  /></label>
+  <label>
+    Bus Type
+    <select name="buses" formControlName="busType">
+      <option value="Regular">Regular</option>
+      <option value="Minibus">MiniBus</option>
+      <option value="DoubleDecker">DoubleDecker</option>
+      <option value="Hybrid">Hybrid</option>
+    </select>
+  </label>
+
+  <label>
+    Station
+    <select formControlName="station">
+      <option *ngFor="let item of stations" [ngValue]="item['id']">{{
+        item["item_text"]
+      }}</option>
+    </select>
+  </label>
+  <br />
+  <button type="submit" [disabled]="!addBusForm.valid">Submit</button>
+  <p *ngIf="formToggler == true" style="display: inline; color: red;">
+    Station Full .... Please select another station !
+  </p>
+</form>
+<div mat-dialog-actions>
+  <button (click)="onNoClick()">close</button>
+</div>

@@ -11,6 +11,7 @@ import { BusNumberPipe } from "../../bus-number.pipe";
 import { NgMultiSelectDropDownModule } from "ng-multiselect-dropdown";
 import { BusTypePipe } from "../../bus-type.pipe";
 import { StationPipe } from "../../station.pipe";
+import { MatDialogModule } from "@angular/material/dialog";
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { StationPipe } from "../../station.pipe";
     ButtonsModule.forRoot(),
     CommonModule,
     NgxPaginationModule,
-    NgMultiSelectDropDownModule
+    NgMultiSelectDropDownModule,
+    MatDialogModule
   ],
   declarations: [DashboardComponent, BusNumberPipe, BusTypePipe, StationPipe]
 })

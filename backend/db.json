@@ -89,13 +89,31 @@
       "type": "Minibus",
       "stationid": 10,
       "id": 30
+    },
+    {
+      "plate": "BUS-000-345",
+      "type": "Minibus",
+      "stationid": 2,
+      "id": 31
+    },
+    {
+      "plate": "BUS-345-690",
+      "type": "Minibus",
+      "stationid": 1,
+      "id": 32
+    },
+    {
+      "plate": "BUS-610-119",
+      "type": "DoubleDecker",
+      "stationid": 10,
+      "id": 33
     }
   ],
   "stations": [
     {
       "item_text": "Giselastrasse",
       "slots": [
-        false,
+        true,
         false,
         false
       ],
@@ -105,7 +123,7 @@
       "item_text": "Hauptbahnhof",
       "slots": [
         true,
-        false,
+        true,
         false
       ],
       "id": 2
@@ -177,7 +195,7 @@
       "item_text": "Giesing",
       "slots": [
         true,
-        false
+        true
       ],
       "id": 10
     },
