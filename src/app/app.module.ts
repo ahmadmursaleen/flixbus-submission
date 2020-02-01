@@ -13,6 +13,14 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 
 import { AppComponent } from "./app.component";
 
+// Imported Modules
+
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+
+import { HttpClientModule } from "@angular/common/http";
+import { CommonModule } from "@angular/common";
+
 // Import containers
 import { DefaultLayoutComponent } from "./containers";
 
@@ -33,6 +41,18 @@ import { AppRoutingModule } from "./app.routing";
 import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { TabsModule } from "ngx-bootstrap/tabs";
 import { ChartsModule } from "ng2-charts";
+import { LoginComponent } from "./views/login/login.component";
+
+// Firebase configuration object
+const firebaseConfig = {
+  apiKey: "AIzaSyBcuGd_rP50iu-t4suYZL3ouzkahobBjtc",
+  authDomain: "flixbus-5a7b4.firebaseapp.com",
+  databaseURL: "https://flixbus-5a7b4.firebaseio.com",
+  projectId: "flixbus-5a7b4",
+  storageBucket: "flixbus-5a7b4.appspot.com",
+  messagingSenderId: "124843802573",
+  appId: "1:124843802573:web:bed9716daed1c08f3bce84"
+};
 
 @NgModule({
   imports: [
@@ -47,9 +67,13 @@ import { ChartsModule } from "ng2-charts";
     PerfectScrollbarModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule,
+    HttpClientModule,
+    CommonModule
   ],
-  declarations: [AppComponent, ...APP_CONTAINERS],
+  declarations: [AppComponent, ...APP_CONTAINERS, LoginComponent],
   providers: [
     {
       provide: LocationStrategy,
