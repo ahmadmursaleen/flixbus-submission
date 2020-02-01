@@ -4,6 +4,7 @@ import { Bus } from "../../bus";
 import { FlixbusCharterService } from "../../flixbus-charter.service";
 import { AddBusComponent } from "../add-bus/add-bus.component";
 import { MatDialog } from "@angular/material/dialog";
+import { Station } from "../../station";
 
 @Component({
   templateUrl: "dashboard.component.html"
@@ -86,6 +87,27 @@ export class DashboardComponent implements OnInit {
       //console.log("The dialog was closed");
       this.ngOnInit();
     });
+  }
+
+  //Functionality to delete a bus
+  deleteBus(busID: number, stationID: number) {
+    let station: Station;
+
+    this._subscription = this.flixbusCharter
+      .getStation(stationID)
+      .subscribe(response => {
+        station = response;
+
+        this._subscription = this.flixbusCharter
+          .modifyStation_occup_to_free(stationID, station)
+          .subscribe(response => {});
+      });
+
+    this._subscription = this.flixbusCharter
+      .deleteBus(busID, stationID)
+      .subscribe(response => {
+        this.ngOnInit();
+      });
   }
 
   ngOnDestroy(): void {

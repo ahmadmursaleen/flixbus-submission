@@ -65,6 +65,12 @@
               <span class="badge badge-pill badge-primary">{{
                 bus["plate"]
               }}</span>
+              <span
+                class="badge badge-pill badge-dark"
+                style="float: right; cursor: pointer;"
+                (click)="deleteBus(bus['id'], bus['stationid'])"
+                >x</span
+              >
             </h4>
           </div>
           <ul class="list-group list-group-flush">

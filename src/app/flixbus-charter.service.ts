@@ -67,7 +67,6 @@ export class FlixbusCharterService {
         break;
       }
     }
-
     this.station = this.http.put<Station>(
       `http://localhost:3000/stations/${stationId}`,
       {
@@ -76,7 +75,49 @@ export class FlixbusCharterService {
       },
       httpOptions
     );
-
     return this.station;
+  };
+
+  //Getting a specific station details
+  getStation: Function = (stationId: number): Observable<Station> => {
+    this.station = this.http.get<Station>(
+      `http://localhost:3000/stations/${stationId}`,
+      httpOptions
+    );
+    return this.station;
+  };
+
+  //changing a slot from occupied to free when a bus is deleted
+  modifyStation_occup_to_free: Function = (
+    stationId: number,
+    stationItem: Station
+  ): Observable<Station> => {
+    for (let key in stationItem.slots) {
+      if (stationItem.slots[key] == true) {
+        stationItem.slots[key] = false;
+        break;
+      }
+    }
+    this.station = this.http.put<Station>(
+      `http://localhost:3000/stations/${stationId}`,
+      {
+        item_text: stationItem.item_text,
+        slots: stationItem.slots
+      },
+      httpOptions
+    );
+    return this.station;
+  };
+
+  //deleting a bus from the dashboard
+  deleteBus: Function = (
+    busId: number,
+    stattionId: number
+  ): Observable<Bus> => {
+    this.bus = this.http.delete<Bus>(
+      `http://localhost:3000/buses/${busId}`,
+      httpOptions
+    );
+    return this.bus;
   };
 }
