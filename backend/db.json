@@ -1,0 +1,213 @@
+{
+  "buses": [
+    {
+      "plate": "BUS-255-576",
+      "type": "MiniBus",
+      "id": 6,
+      "stationid": 2
+    },
+    {
+      "plate": "BUS-123-576",
+      "type": "MiniBus",
+      "id": 11,
+      "stationid": 6
+    },
+    {
+      "plate": "BUS-902-468",
+      "type": "Regular",
+      "id": 12,
+      "stationid": 6
+    },
+    {
+      "plate": "BUS-190-234",
+      "type": "MiniBus",
+      "id": 13,
+      "stationid": 6
+    },
+    {
+      "plate": "BUS-765-962",
+      "type": "Regular",
+      "stationid": 5,
+      "id": 15
+    },
+    {
+      "plate": "BUS-456-190",
+      "type": "DoubleDecker",
+      "stationid": 4,
+      "id": 21
+    },
+    {
+      "plate": "BUS-111-512",
+      "type": "Minibus",
+      "stationid": 3,
+      "id": 22
+    },
+    {
+      "plate": "BUS-007-420",
+      "type": "Minibus",
+      "stationid": 9,
+      "id": 23
+    },
+    {
+      "plate": "BUS-654-123",
+      "type": "DoubleDecker",
+      "stationid": 9,
+      "id": 24
+    },
+    {
+      "plate": "BUS-000-111",
+      "type": "Hybrid",
+      "stationid": 11,
+      "id": 25
+    },
+    {
+      "plate": "BUS-239-274",
+      "type": "Hybrid",
+      "stationid": 12,
+      "id": 26
+    },
+    {
+      "plate": "BUS-190-444",
+      "type": "DoubleDecker",
+      "stationid": 6,
+      "id": 27
+    },
+    {
+      "plate": "BUS-456-123",
+      "type": "Minibus",
+      "stationid": 4,
+      "id": 28
+    },
+    {
+      "plate": "BUS-666-371",
+      "type": "Minibus",
+      "stationid": 11,
+      "id": 29
+    },
+    {
+      "plate": "BUS-450-111",
+      "type": "Minibus",
+      "stationid": 10,
+      "id": 30
+    }
+  ],
+  "stations": [
+    {
+      "item_text": "Giselastrasse",
+      "slots": [
+        false,
+        false,
+        false
+      ],
+      "id": 1
+    },
+    {
+      "item_text": "Hauptbahnhof",
+      "slots": [
+        true,
+        false,
+        false
+      ],
+      "id": 2
+    },
+    {
+      "item_text": "Ostbahnhof",
+      "slots": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "id": 3
+    },
+    {
+      "item_text": "Lehel",
+      "slots": [
+        true,
+        true,
+        false
+      ],
+      "id": 4
+    },
+    {
+      "item_text": "Milbersthofen",
+      "slots": [
+        false,
+        true,
+        false
+      ],
+      "id": 5
+    },
+    {
+      "item_text": "Frankfurter ring",
+      "slots": [
+        true,
+        true,
+        true
+      ],
+      "id": 6
+    },
+    {
+      "item_text": "Karlsplatz",
+      "slots": [
+        false,
+        false
+      ],
+      "id": 7
+    },
+    {
+      "item_text": "Westendstrasse",
+      "slots": [
+        false,
+        false,
+        false
+      ],
+      "id": 8
+    },
+    {
+      "item_text": "Sendling",
+      "slots": [
+        true,
+        true,
+        false
+      ],
+      "id": 9
+    },
+    {
+      "item_text": "Giesing",
+      "slots": [
+        true,
+        false
+      ],
+      "id": 10
+    },
+    {
+      "item_text": "Heimerenplatz",
+      "slots": [
+        true,
+        true,
+        false
+      ],
+      "id": 11
+    },
+    {
+      "item_text": "Garching",
+      "slots": [
+        true,
+        false,
+        false
+      ],
+      "id": 12
+    },
+    {
+      "item_text": "silberhornstrasse",
+      "slots": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "id": 13
+    }
+  ]
+}
