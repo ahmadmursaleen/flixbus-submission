@@ -32,6 +32,21 @@ describe("AppComponent", () => {
     const dashboardComponent = fixture.debugElement.componentInstance;
     expect(dashboardComponent.p).toBe(1);
   }));
+  it("should have the search field for plate number empty", async(() => {
+    const fixture = TestBed.createComponent(DashboardComponent);
+    const dashboardComponent = fixture.debugElement.componentInstance;
+    expect(dashboardComponent.searchPlateNumber).toBe("");
+  }));
+  it("should have 4 types of buses in the bus selector", async(() => {
+    const fixture = TestBed.createComponent(DashboardComponent);
+    const dashboardComponent = fixture.debugElement.componentInstance;
+    expect(dashboardComponent.busTypeSelectData.length).toBe(4);
+  }));
+  it("should have no bus type selected on page load", async(() => {
+    const fixture = TestBed.createComponent(DashboardComponent);
+    const dashboardComponent = fixture.debugElement.componentInstance;
+    expect(dashboardComponent.selectedBusTypes.length).toBe(0);
+  }));
 
   // Test Cases wrtitten to test the asynchronous communication with the flixbus-charter service
   it("should return a list of buses", async(

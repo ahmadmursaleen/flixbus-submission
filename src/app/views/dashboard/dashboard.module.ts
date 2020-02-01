@@ -7,6 +7,9 @@ import { NgxPaginationModule } from "ngx-pagination";
 import { DashboardComponent } from "./dashboard.component";
 import { DashboardRoutingModule } from "./dashboard-routing.module";
 import { CommonModule } from "@angular/common";
+import { BusNumberPipe } from "../../bus-number.pipe";
+import { NgMultiSelectDropDownModule } from "ng-multiselect-dropdown";
+import { BusTypePipe } from "../../bus-type.pipe";
 
 @NgModule({
   imports: [
@@ -16,8 +19,9 @@ import { CommonModule } from "@angular/common";
     BsDropdownModule,
     ButtonsModule.forRoot(),
     CommonModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgMultiSelectDropDownModule
   ],
-  declarations: [DashboardComponent]
+  declarations: [DashboardComponent, BusNumberPipe, BusTypePipe]
 })
 export class DashboardModule {}

@@ -1,8 +1,37 @@
 <div class="animated fadeIn">
+  <div class="row" style="margin-bottom: 5px;">
+    <div class="card" class="col-sm-12 col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 style="display: inline">
+            <h3 style="display: inline">
+              <span class="badge badge-secondary">Search Buses:</span>
+            </h3>
+            <input
+              [(ngModel)]="searchPlateNumber"
+              placeholder="  Enter plate number ..."
+            />
+          </h4>
+          <h6 style="display: inline; float: right;">
+            <ng-multiselect-dropdown
+              [placeholder]="'Select Bus Type'"
+              [data]="busTypeSelectData"
+              [(ngModel)]="selectedBusTypes"
+              [settings]="busSelectorSettings"
+              (onSelectAll)="onSelectAll($event)"
+            >
+            </ng-multiselect-dropdown>
+          </h6>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="row">
     <ng-container
       *ngFor="
         let bus of busListFrontend
+          | busNumber: searchPlateNumber
+          | busType: selectedBusTypes
           | paginate: { itemsPerPage: perPageItems, currentPage: p }
       "
     >

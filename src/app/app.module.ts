@@ -43,6 +43,7 @@ import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { TabsModule } from "ngx-bootstrap/tabs";
 import { ChartsModule } from "ng2-charts";
 import { LoginComponent } from "./views/login/login.component";
+import { BusTypePipe } from "./bus-type.pipe";
 
 // Firebase configuration object
 const firebaseConfig = {
