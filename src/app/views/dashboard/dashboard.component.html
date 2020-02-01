@@ -1,42 +1,39 @@
 <div class="animated fadeIn">
   <div class="row">
-    <div class="col-sm-6 col-lg-3">
-      <div class="card">
-        <div class="card-header">This is card's header - 1</div>
-        <div class="card-body">This is card's body</div>
-        <div class="card-footer">This is card's footer</div>
+    <ng-container
+      *ngFor="
+        let bus of busListFrontend
+          | paginate: { itemsPerPage: perPageItems, currentPage: p }
+      "
+    >
+      <div class="col-sm-6 col-lg-3">
+        <div class="card">
+          <div class="card-header">
+            <h4>
+              <span class="badge badge-pill badge-success">{{
+                bus["id"]
+              }}</span>
+              <span class="badge badge-pill badge-primary">{{
+                bus["plate"]
+              }}</span>
+            </h4>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <h5>Bus Type: {{ bus["type"] }}</h5>
+            </li>
+            <li class="list-group-item">
+              <h5>
+                Station Id:
+                <span class="badge badge-pill badge-secondary">{{
+                  bus["stationid"]
+                }}</span>
+              </h5>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <!--/.col-->
-    <div class="col-sm-6 col-lg-3">
-      <div class="card">
-        <div class="card-header">This is card's header - 2</div>
-        <div class="card-body">This is card's body</div>
-        <div class="card-footer">This is card's footer</div>
-      </div>
-    </div>
-    <!--/.col-->
-    <div class="col-sm-6 col-lg-3">
-      <div class="card">
-        <div class="card-header">This is card's header - 3</div>
-        <div class="card-body">This is card's body</div>
-        <div class="card-footer">This is card's footer</div>
-      </div>
-    </div>
-    <!--/.col-->
-    <div class="col-sm-6 col-lg-3">
-      <div class="card">
-        <div class="card-header">This is card's header - 4</div>
-        <div class="card-body">This is card's body</div>
-        <div class="card-footer">This is card's footer</div>
-      </div>
-    </div>
-    <!--/.col-->
+    </ng-container>
   </div>
-  <!--/.row-->
-  <div class="card">
-    <div class="card-header">This is card's header</div>
-    <div class="card-body">This is card's body</div>
-    <div class="card-footer">This is card's footer</div>
-  </div>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>

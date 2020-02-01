@@ -20,6 +20,7 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 
 import { HttpClientModule } from "@angular/common/http";
 import { CommonModule } from "@angular/common";
+import { NgxPaginationModule } from "ngx-pagination";
 
 // Import containers
 import { DefaultLayoutComponent } from "./containers";
@@ -71,7 +72,8 @@ const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    NgxPaginationModule
   ],
   declarations: [AppComponent, ...APP_CONTAINERS, LoginComponent],
   providers: [
