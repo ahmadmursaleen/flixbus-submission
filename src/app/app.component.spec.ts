@@ -5,6 +5,7 @@ import { DashboardComponent } from "./views/dashboard/dashboard.component";
 import { DashboardModule } from "./views/dashboard/dashboard.module";
 import { HttpClientTestingModule } from "@angular/common/http/testing";
 import { FlixbusCharterService } from "./flixbus-charter.service";
+
 describe("AppComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -27,7 +28,7 @@ describe("AppComponent", () => {
     const dashboardComponent = fixture.debugElement.componentInstance;
     expect(dashboardComponent.perPageItems).toBe(12);
   }));
-  it("should have the first page loaded in the pagination pipe", async(() => {
+  it("should have the first page loaded in the pagination pipe in the dashboard", async(() => {
     const fixture = TestBed.createComponent(DashboardComponent);
     const dashboardComponent = fixture.debugElement.componentInstance;
     expect(dashboardComponent.p).toBe(1);

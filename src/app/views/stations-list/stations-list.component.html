@@ -1,1 +1,49 @@
-<p>stations-list works!</p>
+<div class="animated fadeIn">
+  <div class="row">
+    <ng-container
+      *ngFor="
+        let item of stations
+          | paginate: { itemsPerPage: perPageItems, currentPage: p }
+      "
+    >
+      <div class="col-sm-6 col-lg-3">
+        <div class="card">
+          <div class="card-header">
+            <h4>
+              <span class="badge badge-pill badge-success">{{
+                item["id"]
+              }}</span>
+              <span class="badge badge-pill badge-primary">{{
+                item["item_text"]
+              }}</span>
+              <span
+                class="badge badge-pill badge-dark"
+                style="float: right; cursor: pointer;"
+                (click)="addSlot(item)"
+                >+</span
+              >
+              <span
+                class="badge badge-pill badge-dark"
+                style="float: right; cursor: pointer;"
+                (click)="deleteSlot(item)"
+                >-</span
+              >
+            </h4>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ng-container *ngFor="let slots of item['slots']; let id = index">
+                <h5 *ngIf="slots == true">slot {{ id + 1 }} : Occupied</h5>
+                <h5 *ngIf="slots == false">
+                  slot {{ id + 1 }} : Free
+                </h5></ng-container
+              >
+            </li>
+          </ul>
+        </div>
+      </div></ng-container
+    >
+    <br />
+  </div>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
