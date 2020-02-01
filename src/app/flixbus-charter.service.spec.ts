@@ -1,11 +1,16 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed } from "@angular/core/testing";
+import { HttpClientTestingModule } from "@angular/common/http/testing";
+import { FlixbusCharterService } from "./flixbus-charter.service";
+import { RouterTestingModule } from "@angular/router/testing";
 
-import { FlixbusCharterService } from './flixbus-charter.service';
+describe("FlixbusCharterService", () => {
+  beforeEach(() =>
+    TestBed.configureTestingModule({
+      imports: [RouterTestingModule, HttpClientTestingModule]
+    })
+  );
 
-describe('FlixbusCharterService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
-
-  it('should be created', () => {
+  it("should be created", () => {
     const service: FlixbusCharterService = TestBed.get(FlixbusCharterService);
     expect(service).toBeTruthy();
   });
