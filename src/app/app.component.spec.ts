@@ -22,6 +22,17 @@ describe("AppComponent", () => {
     const dashboardComponent = fixture.debugElement.componentInstance;
     expect(dashboardComponent).toBeTruthy();
   }));
+  it("should have 12 pages per items in the dashboard", async(() => {
+    const fixture = TestBed.createComponent(DashboardComponent);
+    const dashboardComponent = fixture.debugElement.componentInstance;
+    expect(dashboardComponent.perPageItems).toBe(12);
+  }));
+  it("should have the first page loaded in the pagination pipe", async(() => {
+    const fixture = TestBed.createComponent(DashboardComponent);
+    const dashboardComponent = fixture.debugElement.componentInstance;
+    expect(dashboardComponent.p).toBe(1);
+  }));
+
   // Test Cases wrtitten to test the asynchronous communication with the flixbus-charter service
   it("should return a list of buses", async(
     inject([FlixbusCharterService], (service: FlixbusCharterService) => {
