@@ -31,7 +31,7 @@ export interface NavData {
 
 export const navItems: NavData[] = [
   {
-    name: "Home Page",
+    name: "Bus List",
     url: "/dashboard",
     icon: "icon-speedometer",
     badge: {
@@ -40,33 +40,8 @@ export const navItems: NavData[] = [
     }
   },
   {
-    title: true,
-    name: "Title 1"
-  },
-  {
-    name: "Parent Node",
-    url: "/dashboard",
-    icon: "icon-drop"
-  },
-  {
-    title: true,
-    name: "Title 2"
-  },
-  {
-    name: "Parent Node",
-    url: "/dashboard",
-    icon: "icon-puzzle",
-    children: [
-      {
-        name: "Child Node 1",
-        url: "/dashboard",
-        icon: "icon-puzzle"
-      },
-      {
-        name: "Child Node 2",
-        url: "/dashboard",
-        icon: "icon-puzzle"
-      }
-    ]
+    name: "Station List",
+    url: "/stations",
+    icon: "icon-settings"
   }
 ];

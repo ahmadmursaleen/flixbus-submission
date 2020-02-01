@@ -2,13 +2,13 @@
   [navbarBrandRouterLink]="['/dashboard']"
   [fixed]="true"
   [navbarBrandFull]="{
-    src: 'assets/img/brand/logo.svg',
-    width: 89,
-    height: 25,
+    src: 'assets/img/brand/flixbus_logo_rgb.png',
+    width: 145,
+    height: 39,
     alt: 'Company Logo'
   }"
   [navbarBrandMinimized]="{
-    src: 'assets/img/brand/sygnet.svg',
+    src: 'assets/img/flix_icon.png',
     width: 30,
     height: 30,
     alt: 'Company Logo'
@@ -44,17 +44,6 @@
         *dropdownMenu
         aria-labelledby="simple-dropdown"
       >
-        <div class="dropdown-header text-center">
-          <strong>Settings 1</strong>
-        </div>
-        <a class="dropdown-item" href="#"
-          ><i class="fa fa-bell-o"></i> Sub 1-1
-          <span class="badge badge-info">info</span></a
-        >
-        <div class="dropdown-header text-center">
-          <strong>Settings 2</strong>
-        </div>
-        <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Sub 2-1</a>
         <a class="dropdown-item" href="#" (click)="authService.logout()"
           ><i class="fa fa-lock"></i> Logout</a
         >
@@ -79,6 +68,7 @@
   </main>
 </div>
 <app-footer>
-  <span><a href="">Link</a> &copy; years/copyrights</span>
-  <span class="ml-auto">Powered by <a href="">Link</a></span>
+  <span class="ml-auto"
+    >Powered by <a href="https://www.flixbus.de/">FlixBus</a></span
+  >
 </app-footer>
