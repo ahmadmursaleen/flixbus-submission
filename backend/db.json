@@ -107,6 +107,12 @@
       "type": "Regular",
       "stationid": 4,
       "id": 36
+    },
+    {
+      "plate": "BUS-333-991",
+      "type": "DoubleDecker",
+      "stationid": 13,
+      "id": 37
     }
   ],
   "stations": [
@@ -217,8 +223,7 @@
     {
       "item_text": "silberhornstrasse",
       "slots": [
-        false,
-        false,
+        true,
         false,
         false
       ],
@@ -240,10 +245,17 @@
         false,
         false,
         false,
-        false,
         false
       ],
       "id": 15
+    },
+    {
+      "item_text": "Olympiazentrum",
+      "slots": [
+        false,
+        false
+      ],
+      "id": 16
     }
   ]
 }
