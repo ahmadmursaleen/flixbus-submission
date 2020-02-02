@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { Station } from "../../station";
 import { Subscription } from "rxjs";
 import { FlixbusCharterService } from "../../flixbus-charter.service";
+import { AddStationComponent } from "../add-station/add-station.component";
+import { MatDialog } from "@angular/material/dialog";
 
 @Component({
   selector: "app-stations-list",
@@ -18,7 +20,10 @@ export class StationsListComponent implements OnInit {
   p: number = 1;
   perPageItems: number = 12;
 
-  constructor(private flixbusCharter: FlixbusCharterService) {}
+  constructor(
+    private flixbusCharter: FlixbusCharterService,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit() {
     this._subscription = this.flixbusCharter
@@ -47,5 +52,15 @@ export class StationsListComponent implements OnInit {
     this._subscription = this.flixbusCharter
       .slotChange(station.id, station)
       .subscribe(response => {});
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(AddStationComponent, {
+      width: "450px"
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.ngOnInit();
+    });
   }
 }

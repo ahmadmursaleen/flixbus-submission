@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>Add New Station</h1>
+<form [formGroup]="addStationForm" (ngSubmit)="onSubmit()">
+  <label>
+    Station Name
+    <input type="text" placeholder="Enter Station Name" formControlName="name"
+  /></label>
+  <label>
+    Total Slots
+    <input type="text" placeholder="Enter Slot Number" formControlName="slots"
+  /></label>
+
+  <br />
+  <button type="submit" [disabled]="!addStationForm.valid">Submit</button>
+</form>
+<div mat-dialog-actions>
+  <button (click)="onNoClick()">close</button>
+</div>

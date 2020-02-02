@@ -136,4 +136,20 @@ export class FlixbusCharterService {
     );
     return this.station;
   };
+
+  //Functionality to add a new station
+  newStation: Function = (
+    name: string,
+    slots: boolean[]
+  ): Observable<Station> => {
+    this.station = this.http.post<Station>(
+      "http://localhost:3000/stations",
+      {
+        item_text: name,
+        slots: slots
+      },
+      httpOptions
+    );
+    return this.station;
+  };
 }

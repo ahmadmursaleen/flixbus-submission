@@ -4,6 +4,7 @@ import { StationsListComponent } from "./stations-list.component";
 import { RouterTestingModule } from "@angular/router/testing";
 import { HttpClientTestingModule } from "@angular/common/http/testing";
 import { NgxPaginationModule } from "ngx-pagination";
+import { MatDialogModule } from "@angular/material";
 
 describe("StationsListComponent", () => {
   let component: StationsListComponent;
@@ -15,7 +16,8 @@ describe("StationsListComponent", () => {
       imports: [
         RouterTestingModule,
         HttpClientTestingModule,
-        NgxPaginationModule
+        NgxPaginationModule,
+        MatDialogModule
       ]
     }).compileComponents();
   }));

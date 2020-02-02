@@ -1,12 +1,6 @@
 {
   "buses": [
     {
-      "plate": "BUS-255-576",
-      "type": "MiniBus",
-      "id": 6,
-      "stationid": 2
-    },
-    {
       "plate": "BUS-123-576",
       "type": "MiniBus",
       "id": 11,
@@ -95,6 +89,24 @@
       "type": "DoubleDecker",
       "stationid": 10,
       "id": 33
+    },
+    {
+      "plate": "BUS-420-123",
+      "type": "Hybrid",
+      "stationid": 2,
+      "id": 34
+    },
+    {
+      "plate": "BUS-456-111",
+      "type": "Minibus",
+      "stationid": 3,
+      "id": 35
+    },
+    {
+      "plate": "BUS-345-111",
+      "type": "Regular",
+      "stationid": 4,
+      "id": 36
     }
   ],
   "stations": [
@@ -119,8 +131,7 @@
       "item_text": "Ostbahnhof",
       "slots": [
         true,
-        false,
-        false
+        true
       ],
       "id": 3
     },
@@ -129,7 +140,7 @@
       "slots": [
         true,
         true,
-        false
+        true
       ],
       "id": 4
     },
@@ -212,6 +223,27 @@
         false
       ],
       "id": 13
+    },
+    {
+      "item_text": "Harthof",
+      "slots": [
+        false,
+        false,
+        false
+      ],
+      "id": 14
+    },
+    {
+      "item_text": "Bonnerplatz",
+      "slots": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "id": 15
     }
   ]
 }

@@ -47,6 +47,7 @@ import { StationsListComponent } from "./views/stations-list/stations-list.compo
 import { AddBusComponent } from "./views/add-bus/add-bus.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatDialogModule } from "@angular/material/dialog";
+import { AddStationComponent } from "./views/add-station/add-station.component";
 
 // Firebase configuration object
 const firebaseConfig = {
@@ -79,14 +80,16 @@ const firebaseConfig = {
     CommonModule,
     NgxPaginationModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule
   ],
   declarations: [
     AppComponent,
     ...APP_CONTAINERS,
     LoginComponent,
     StationsListComponent,
-    AddBusComponent
+    AddBusComponent,
+    AddStationComponent
   ],
   providers: [
     {
@@ -95,6 +98,6 @@ const firebaseConfig = {
     }
   ],
   bootstrap: [AppComponent],
-  entryComponents: [AddBusComponent]
+  entryComponents: [AddBusComponent, AddStationComponent]
 })
 export class AppModule {}
