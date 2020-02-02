@@ -2,10 +2,6 @@
 
 This is the flixbus's frontend challenge implementations details.
 
-Please test the implementation at the following link.
-
-https://flixbus-5a7b4.firebaseapp.com/
-
 To log in use the the following credentials.
 <br>
 
