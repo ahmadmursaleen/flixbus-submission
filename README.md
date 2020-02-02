@@ -32,4 +32,5 @@ password: user12345
 
 4. Start the web application using the following command.
 
+<br>cd ..
 <br>ng serve --open
