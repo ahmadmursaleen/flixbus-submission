@@ -32,4 +32,23 @@ describe("AddBusComponent", () => {
   it("should create", () => {
     expect(component).toBeTruthy();
   });
+
+  // Form validations tests
+  it("form should be invalid", async(() => {
+    const fixture = TestBed.createComponent(AddBusComponent);
+    const addBusComponent = fixture.debugElement.componentInstance;
+    addBusComponent.addBusForm.controls["plateNumber"].setValue("");
+    addBusComponent.addBusForm.controls["busType"].setValue("");
+    addBusComponent.addBusForm.controls["station"].setValue("");
+    expect(addBusComponent.addBusForm.valid).toBeFalsy();
+  }));
+
+  it("form should be valid", async(() => {
+    const fixture = TestBed.createComponent(AddBusComponent);
+    const addBusComponent = fixture.debugElement.componentInstance;
+    addBusComponent.addBusForm.controls["plateNumber"].setValue("BUS-567-123");
+    addBusComponent.addBusForm.controls["busType"].setValue("Regular");
+    addBusComponent.addBusForm.controls["station"].setValue("Lehel");
+    expect(addBusComponent.addBusForm.valid).toBeTruthy();
+  }));
 });

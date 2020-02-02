@@ -61,12 +61,6 @@
       "id": 25
     },
     {
-      "plate": "BUS-239-274",
-      "type": "Hybrid",
-      "stationid": 12,
-      "id": 26
-    },
-    {
       "plate": "BUS-190-444",
       "type": "DoubleDecker",
       "stationid": 6,
@@ -77,12 +71,6 @@
       "type": "Minibus",
       "stationid": 4,
       "id": 28
-    },
-    {
-      "plate": "BUS-666-371",
-      "type": "Minibus",
-      "stationid": 11,
-      "id": 29
     },
     {
       "plate": "BUS-450-111",
@@ -202,7 +190,7 @@
     {
       "item_text": "Heimerenplatz",
       "slots": [
-        true,
+        false,
         true,
         false
       ],
@@ -211,7 +199,7 @@
     {
       "item_text": "Garching",
       "slots": [
-        true,
+        false,
         false,
         false
       ],
