@@ -120,4 +120,20 @@ export class FlixbusCharterService {
     );
     return this.bus;
   };
+
+  //Adding/removing a free slot to a specific station
+  slotChange: Function = (
+    stationId: number,
+    stationItem: Station
+  ): Observable<Station> => {
+    this.station = this.http.put<Station>(
+      `http://localhost:3000/stations/${stationId}`,
+      {
+        item_text: stationItem.item_text,
+        slots: stationItem.slots
+      },
+      httpOptions
+    );
+    return this.station;
+  };
 }

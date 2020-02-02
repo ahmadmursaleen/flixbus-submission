@@ -27,4 +27,25 @@ export class StationsListComponent implements OnInit {
         this.stations = response;
       });
   }
+
+  //Functionality to add and remove a slot from a specific station
+
+  addSlot(station: Station) {
+    station.slots.push(false);
+    this._subscription = this.flixbusCharter
+      .slotChange(station.id, station)
+      .subscribe(response => {});
+  }
+
+  deleteSlot(station: Station) {
+    for (let key in station.slots) {
+      if (station.slots[key] == false) {
+        station.slots.splice(parseInt(key), 1);
+        break;
+      }
+    }
+    this._subscription = this.flixbusCharter
+      .slotChange(station.id, station)
+      .subscribe(response => {});
+  }
 }

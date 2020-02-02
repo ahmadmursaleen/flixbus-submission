@@ -102,7 +102,6 @@
       "item_text": "Giselastrasse",
       "slots": [
         true,
-        false,
         false
       ],
       "id": 1
@@ -120,7 +119,6 @@
       "item_text": "Ostbahnhof",
       "slots": [
         true,
-        false,
         false,
         false
       ],
