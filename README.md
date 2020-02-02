@@ -10,7 +10,7 @@ password: user12345
 
 ## Method
 
-1. The frontend is hosted on Firebase with Firebase authentication.
+1. The frontend is using Firebase authentication.
 2. It is an angular application based on the core ui theme.[https://coreui.io/angular/]
 3. Some of the salient features of the front end implementation include services using Dependency Injections to resue business logic, admin guards to prevent views from non logged in users, using observables from the rxjs library to access the REST API with the http client module and lazy loading etc.
 4. It has 25 unit tests implemented based on test driven development. For integration tetsing, following 5 integration tests are performed i.e. the web application should have a login panel. The web application should redirect to /login when trying to access the dashboard without being authenticated. The webapplication should successfully login if provided the proper credentials. The Dashboard should have a list of buses after successful login.The Dashboard should have a filter panel after successful login.
